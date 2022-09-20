@@ -1,8 +1,8 @@
 (ns todo-clj.core
   (:require [compojure.core :refer [routes]]
             [ring.adapter.jetty :as server]
-            [todo-clj.handler.main :refer [main-routes]]
-            [todo-clj.handler.todo :refer [todo-routes]]
+            [todo-clj.view.main :refer [main-routes]]
+            [todo-clj.view.todo :refer [todo-routes]]
             [todo-clj.middleware :refer [wrap-dev]]
             [environ.core :refer [env]]))
 

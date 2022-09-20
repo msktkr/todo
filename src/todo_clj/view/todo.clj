@@ -1,4 +1,4 @@
-(ns todo-clj.handler.todo
+(ns todo-clj.view.todo
   (:require [compojure.core :refer [defroutes context GET POST]]
             [todo-clj.util.response :as res]))
 
