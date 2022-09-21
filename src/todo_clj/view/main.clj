@@ -1,17 +1,8 @@
 (ns todo-clj.view.main
-  (:require [compojure.core :refer [defroutes GET]]
-            [compojure.route :as route]
-            [todo-clj.util.response :as res]))
+  (:require [todo-clj.view.layout :as layout]))
 
 (defn home-view [req]
-  "<h1>ホーム画面</h1>
-   <a href=\"/todo\">TODO 一覧</a>")
-
-(defn home [req]
-  (-> (home-view req)
-      res/response
-      res/html))
-
-(defroutes main-routes
-  (GET "/" _ home)
-  (route/not-found "<h1>Not found</h1>"))
+  (->> [:section.card
+        [:h2 "ホーム画面"]
+        [:a {:href "/todo"} "TODO 一覧"]]
+       (layout/common req)))
